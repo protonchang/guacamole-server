@@ -19,5 +19,5 @@ jobs:
       run: autoreconf -fi
     - name: configure
       run: ./configure --with-init-dir=/etc/init.d
-    - name: make $(grep -c ^processor /proc/cpuinfo)
-      run: make
+    - name: make
+      run: make -j$(grep -c ^processor /proc/cpuinfo)
